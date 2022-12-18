@@ -32,14 +32,17 @@ public class Knight : MonoBehaviour
                 gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
                 if (value == WalkableDirection.Right)
                 {
+                    Debug.LogError("向右走");
                     walkDirectionVector = Vector2.right;
                 }
                 else if (value == WalkableDirection.Left)
                 {
+                    Debug.LogError("向左走");
                     walkDirectionVector = Vector2.left;
                 }
             }
             _walkDirection = value;
+
         }
     }
 
@@ -101,9 +104,11 @@ public class Knight : MonoBehaviour
     {
         if (touchingDirection.IsOnWall && touchingDirection.IsGrounded)
         {
-            // Debug.LogError("转向");
+            // Debug.Log(touchingDirection.IsOnWall);
             // Debug.LogError(touchingDirection.IsOnWall);
+            Debug.Log("碰墙转向");
             FlipDirection();
+            Debug.Log("碰墙转向");
         }
         if (!damageable.LockVelocity)
         {
@@ -120,10 +125,12 @@ public class Knight : MonoBehaviour
     {
         if (WalkDirection == WalkableDirection.Right)
         {
+            Debug.LogError("左转");
             WalkDirection = WalkableDirection.Left;
         }
         else if (WalkDirection == WalkableDirection.Left)
         {
+            Debug.LogError("右转");
             WalkDirection = WalkableDirection.Right;
         }
         else
@@ -136,12 +143,14 @@ public class Knight : MonoBehaviour
     {
         // LockVelocity = true;
         if(transform.localScale.x>0 && attackback.x>0){
+            Debug.Log("受击转向");
             FlipDirection();
         }else if(transform.localScale.x<0 && attackback.x<0){
+            Debug.Log("受击转向");
             FlipDirection();
         }
         hitAnmiator.SetTrigger(AnimationStrings.hit);
-        Debug.Log(attackback);
+        // Debug.Log(attackback);
         // rb.velocity = new Vector2(0, 0);
         rb.AddForce(new Vector2(attackback.x, rb.velocity.y + attackback.y), ForceMode2D.Impulse);
         Instantiate(bloodEffect,transform.position,Quaternion.identity);
@@ -151,6 +160,7 @@ public class Knight : MonoBehaviour
     {
         // LockVelocity = true;
         if(touchingDirection.IsGrounded)
+           Debug.Log("边缘转向");
            FlipDirection();
     }
 }

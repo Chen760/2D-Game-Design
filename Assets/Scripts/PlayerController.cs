@@ -221,7 +221,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(transform.localScale.x * rollImpulse, rb.velocity.y);
             }
-            else if (IsAttack && IsMoving)
+            else if (IsAttack)
             {
                 rb.velocity = new Vector2(transform.localScale.x * attackImpulse, rb.velocity.y);
             }
@@ -292,7 +292,7 @@ public class PlayerController : MonoBehaviour
 
     public void onRoll(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && touchingDirection.IsGrounded)
         {
             Damageable damageable = GetComponent<Damageable>();
             animator.SetTrigger(AnimationStrings.roll);

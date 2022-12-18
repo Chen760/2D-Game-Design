@@ -6,7 +6,7 @@ public class Attack : MonoBehaviour
 {
     Collider2D attackCollider;
     public int attackDamage = 10;
-    public float attackMove = 0f;
+    // public float attackMove = 0f;
     public Vector2 attackback = Vector2.zero;
 
     [Header("打击感")]

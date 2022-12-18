@@ -48,6 +48,10 @@ MonoBehaviour:
   attackDamage: 10
   attackMove: 0
   attackback: {x: 1, y: 0}
+  shakeTime: 0
+  Pause: 0
+  shakeAmount: 0
+  shaker: {fileID: 0}
 --- !u!61 &459969602042310493
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -614,6 +618,10 @@ MonoBehaviour:
   attackDamage: 10
   attackMove: 10
   attackback: {x: 1, y: 0}
+  shakeTime: 0
+  Pause: 0
+  shakeAmount: 0
+  shaker: {fileID: 0}
 --- !u!61 &2682803446560172334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -688,6 +696,10 @@ MonoBehaviour:
   attackDamage: 10
   attackMove: 0
   attackback: {x: 1, y: 0}
+  shakeTime: 0
+  Pause: 0
+  shakeAmount: 0
+  shaker: {fileID: 0}
 --- !u!61 &1226357412715051114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -762,6 +774,10 @@ MonoBehaviour:
   attackDamage: 20
   attackMove: 0
   attackback: {x: 3, y: 1}
+  shakeTime: 0
+  Pause: 0
+  shakeAmount: 0
+  shaker: {fileID: 0}
 --- !u!61 &6381768396198171776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -836,6 +852,10 @@ MonoBehaviour:
   attackDamage: 10
   attackMove: 10
   attackback: {x: 1, y: 0}
+  shakeTime: 0
+  Pause: 0
+  shakeAmount: 0
+  shaker: {fileID: 0}
 --- !u!61 &1630972501867742440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -910,6 +930,10 @@ MonoBehaviour:
   attackDamage: 10
   attackMove: 0
   attackback: {x: 1, y: 0}
+  shakeTime: 0
+  Pause: 0
+  shakeAmount: 0
+  shaker: {fileID: 0}
 --- !u!61 &648813388334656387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -984,6 +1008,10 @@ MonoBehaviour:
   attackDamage: 10
   attackMove: 0
   attackback: {x: 1, y: 0}
+  shakeTime: 0
+  Pause: 0
+  shakeAmount: 0
+  shaker: {fileID: 0}
 --- !u!61 &8628346208592044890
 BoxCollider2D:
   m_ObjectHideFlags: 0
