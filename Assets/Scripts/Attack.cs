@@ -29,7 +29,7 @@ public class Attack : MonoBehaviour
         {
             AttackSense.Instance.HitPause(Pause);
             if(shaker != null)
-               shaker.RequestShake(shakeAmount,shakeTime);
+                shaker.RequestShake(shakeAmount,shakeTime);
             // AttackSense.Instance.CameraShake(shakeTime, Strength);
             Vector2 deliverAttackback = transform.parent.localScale.x > 0 ? attackback : new Vector2(-attackback.x, attackback.y);
             bool gotHit = damageable.Hit(attackDamage, deliverAttackback);

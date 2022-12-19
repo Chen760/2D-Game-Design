@@ -15,29 +15,26 @@ public class Knight : MonoBehaviour
     Damageable damageable;
     public enum WalkableDirection { Right, Left }
 
-    public WalkableDirection _walkDirection;
     public Vector2 walkDirectionVector = Vector2.right;
 
     public GameObject bloodEffect;
     Animator hitAnmiator;
 
+    public WalkableDirection _walkDirection = WalkableDirection.Right;
     public WalkableDirection WalkDirection
     {
         get { return _walkDirection; }
         set
         {
             if (_walkDirection != value)
-            // Debug.Log(value);
             {
-                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
+                gameObject.transform.localScale *= new Vector2(-1, 1);
                 if (value == WalkableDirection.Right)
                 {
-                    Debug.LogError("向右走");
                     walkDirectionVector = Vector2.right;
                 }
                 else if (value == WalkableDirection.Left)
                 {
-                    Debug.LogError("向左走");
                     walkDirectionVector = Vector2.left;
                 }
             }
@@ -104,11 +101,7 @@ public class Knight : MonoBehaviour
     {
         if (touchingDirection.IsOnWall && touchingDirection.IsGrounded)
         {
-            // Debug.Log(touchingDirection.IsOnWall);
-            // Debug.LogError(touchingDirection.IsOnWall);
-            Debug.Log("碰墙转向");
             FlipDirection();
-            Debug.Log("碰墙转向");
         }
         if (!damageable.LockVelocity)
         {
@@ -125,12 +118,10 @@ public class Knight : MonoBehaviour
     {
         if (WalkDirection == WalkableDirection.Right)
         {
-            Debug.LogError("左转");
             WalkDirection = WalkableDirection.Left;
         }
         else if (WalkDirection == WalkableDirection.Left)
         {
-            Debug.LogError("右转");
             WalkDirection = WalkableDirection.Right;
         }
         else
@@ -143,10 +134,8 @@ public class Knight : MonoBehaviour
     {
         // LockVelocity = true;
         if(transform.localScale.x>0 && attackback.x>0){
-            Debug.Log("受击转向");
             FlipDirection();
         }else if(transform.localScale.x<0 && attackback.x<0){
-            Debug.Log("受击转向");
             FlipDirection();
         }
         hitAnmiator.SetTrigger(AnimationStrings.hit);
@@ -160,7 +149,6 @@ public class Knight : MonoBehaviour
     {
         // LockVelocity = true;
         if(touchingDirection.IsGrounded)
-           Debug.Log("边缘转向");
            FlipDirection();
     }
 }
