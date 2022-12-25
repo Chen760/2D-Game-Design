@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private bool hasJumpForce;
     private float timer;           // 计时器
     private float timer_max = 2f;  // 限定时间
+     float changeTimer = 0f;
+
 
     // private bool isAttack = false;
 
@@ -157,6 +159,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckForJump();
 
+
         if (touchingDirection.IsOnWall)
         {
             rb.gravityScale = 0.5f;
@@ -206,6 +209,16 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (changeTimer != 0)
+        {
+            changeTimer -= Time.deltaTime;
+            if (changeTimer <= 0)
+            {
+                gameObject.layer = LayerMask.NameToLayer("Player");
+                changeTimer = 0;
+            }
+        }
+
     }
 
     private void FixedUpdate()
@@ -221,7 +234,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(transform.localScale.x * rollImpulse, rb.velocity.y);
             }
-            else if (IsAttack && IsMoving)
+            else if (IsAttack)
             {
                 rb.velocity = new Vector2(transform.localScale.x * attackImpulse, rb.velocity.y);
             }
@@ -292,7 +305,7 @@ public class PlayerController : MonoBehaviour
 
     public void onRoll(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && touchingDirection.IsGrounded)
         {
             Damageable damageable = GetComponent<Damageable>();
             animator.SetTrigger(AnimationStrings.roll);
@@ -366,6 +379,17 @@ public class PlayerController : MonoBehaviour
     {
         // LockVelocity = true;
         rb.velocity = new Vector2(attackback.x, rb.velocity.y + attackback.y);
+    }
+
+    public void OnDown(InputAction.CallbackContext context)
+    {
+        // LockVelocity = true;
+        if (context.started && damageable.IsAlive)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Ground");
+        }
+        changeTimer = 0.5f;
+
     }
 
 

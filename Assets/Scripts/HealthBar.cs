@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     Damageable playerDamageable;
-    public TMP_Text healthtext;
+    // public TMP_Text healthtext;
     public Slider healthSlider;
     // Start is called before the first frame update
 
@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         healthSlider.value = CaculateSliderPercentage(playerDamageable.Health, playerDamageable.MaxHealth);
-        healthtext.text = "HP" + playerDamageable.Health + "/" + playerDamageable.MaxHealth;
+        // healthtext.text = "HP" + playerDamageable.Health + "/" + playerDamageable.MaxHealth;
     }
 
     // Update is called once per frame
@@ -51,6 +51,6 @@ public class HealthBar : MonoBehaviour
     private void OnPlayerHealthChanged(int newHealth, int maxHealth)
     {
         healthSlider.value = CaculateSliderPercentage(newHealth, maxHealth);
-        healthtext.text = "HP" + newHealth + "/" + maxHealth;
+        // healthtext.text = "HP" + newHealth + "/" + maxHealth;
     }
 }

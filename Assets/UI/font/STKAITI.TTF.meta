@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 62948d2de8e50c2439407725a22d5bca
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - STKaiti
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 179236996f46bf4489db920daf96a460, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

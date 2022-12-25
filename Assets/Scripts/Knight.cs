@@ -15,21 +15,20 @@ public class Knight : MonoBehaviour
     Damageable damageable;
     public enum WalkableDirection { Right, Left }
 
-    public WalkableDirection _walkDirection;
     public Vector2 walkDirectionVector = Vector2.right;
 
     public GameObject bloodEffect;
     Animator hitAnmiator;
 
+    public WalkableDirection _walkDirection = WalkableDirection.Right;
     public WalkableDirection WalkDirection
     {
         get { return _walkDirection; }
         set
         {
             if (_walkDirection != value)
-            // Debug.Log(value);
             {
-                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
+                gameObject.transform.localScale *= new Vector2(-1, 1);
                 if (value == WalkableDirection.Right)
                 {
                     walkDirectionVector = Vector2.right;
@@ -40,6 +39,7 @@ public class Knight : MonoBehaviour
                 }
             }
             _walkDirection = value;
+
         }
     }
 
@@ -101,8 +101,6 @@ public class Knight : MonoBehaviour
     {
         if (touchingDirection.IsOnWall && touchingDirection.IsGrounded)
         {
-            // Debug.LogError("转向");
-            // Debug.LogError(touchingDirection.IsOnWall);
             FlipDirection();
         }
         if (!damageable.LockVelocity)
@@ -141,7 +139,7 @@ public class Knight : MonoBehaviour
             FlipDirection();
         }
         hitAnmiator.SetTrigger(AnimationStrings.hit);
-        Debug.Log(attackback);
+        // Debug.Log(attackback);
         // rb.velocity = new Vector2(0, 0);
         rb.AddForce(new Vector2(attackback.x, rb.velocity.y + attackback.y), ForceMode2D.Impulse);
         Instantiate(bloodEffect,transform.position,Quaternion.identity);

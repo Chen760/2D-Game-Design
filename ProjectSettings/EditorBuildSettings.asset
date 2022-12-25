@@ -9,6 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlayScenes.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/Scene0.unity
+    guid: 8b43210c03875e945879e24ca0541245
+  - enabled: 0
     path: Assets/Scenes/QuirScene.unity
     guid: 0bc7a8ecb6293f24c87c909a428a12f2
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: f81aa0342bbf212448699799486966e9, type: 2}

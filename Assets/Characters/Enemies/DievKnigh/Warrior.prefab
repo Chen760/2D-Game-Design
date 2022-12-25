@@ -232,6 +232,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3069684167233080599}
     m_Modifications:
+    - target: {fileID: 114377660776301920, guid: 42137134828286b439449a4f7c591ae2, type: 3}
+      propertyPath: noCollidersRemain.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3069684167233080600}
+    - target: {fileID: 114377660776301920, guid: 42137134828286b439449a4f7c591ae2, type: 3}
+      propertyPath: noCollidersRemain.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNoGroundDetected
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377660776301920, guid: 42137134828286b439449a4f7c591ae2, type: 3}
+      propertyPath: noCollidersRemain.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Warrior, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3230189789012849263, guid: 42137134828286b439449a4f7c591ae2, type: 3}
       propertyPath: m_Name
       value: CliffDetectionZone

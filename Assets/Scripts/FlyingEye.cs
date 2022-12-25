@@ -54,7 +54,7 @@ public class FlyingEye : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nextWaypoint = waypoints[waypointNum];
+        // nextWaypoint = waypoints[waypointNum];
     }
 
     // Update is called once per frame
@@ -88,22 +88,22 @@ public class FlyingEye : MonoBehaviour
 
     private void Flight()
     {
-        Vector2 directionToWaypoint = (nextWaypoint.position - transform.position).normalized;
+        // Vector2 directionToWaypoint = (nextWaypoint.position - transform.position).normalized;
 
-        float distance = Vector2.Distance(nextWaypoint.position, transform.position);
+        // float distance = Vector2.Distance(nextWaypoint.position, transform.position);
 
-        rb.velocity = directionToWaypoint * walkSpeed;
-        UpdateDirection();
+        // rb.velocity = directionToWaypoint * walkSpeed;
+        // UpdateDirection();
 
-        if (distance <= waypointReachedDistance)
-        {
-            waypointNum++;
-            if (waypointNum >= waypoints.Count)
-            {
-                waypointNum = 0;
-            }
-            nextWaypoint = waypoints[waypointNum];
-        }
+        // if (distance <= waypointReachedDistance)
+        // {
+        //     waypointNum++;
+        //     if (waypointNum >= waypoints.Count)
+        //     {
+        //         waypointNum = 0;
+        //     }
+        //     nextWaypoint = waypoints[waypointNum];
+        // }
 
 
     }
