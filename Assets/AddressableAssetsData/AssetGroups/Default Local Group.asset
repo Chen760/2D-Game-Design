@@ -16,7 +16,11 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 51e8245a15f136248b8bcad187f9a68f
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: e014a6673b49674428e8f3e40cc6f568
+    m_Address: Assets/Characters/BehTree/Behavior.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 035382bd4fa44f84089a384b627a24c9, type: 2}
   m_SchemaSet:
